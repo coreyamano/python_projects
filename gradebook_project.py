@@ -46,18 +46,22 @@ print(gradebook)
 # 7. Our instructor just told us they made a mistake grading and are rewarding an extra 5 points for our visual arts class.
 
 # Access the index of the grade for your visual arts class and modify it to be 5 points greater.
-
+gradebook[5][1] = 98
+print(gradebook)
 
 # 8. You decided to switch from a numerical grade value to a Pass/Fail option for your poetry class.
 
 # Find the grade value in your gradebook for your poetry class and use the .remove() method to delete it.
-
+gradebook[2].remove(85)
+print(gradebook)
 # 9. Use the .append() method to then add a new "Pass" value to the sublist where your poetry class is located.
-
+gradebook[2].append("Pass")
+print(gradebook)
 # One Big Gradebook!
-# 10.
-# You also have your grades from last semester, stored in last_semester_gradebook.
+# 10. You also have your grades from last semester, stored in last_semester_gradebook.
 
 # Create a new variable full_gradebook that combines both last_semester_gradebook and gradebook using + to have one complete grade book.
 
 # Print full_gradebook to see our completed list.
+full_gradebook = last_semester_gradebook + gradebook
+print(full_gradebook)
