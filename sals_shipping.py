@@ -32,7 +32,7 @@ weight = 8
 # Ground Shipping
 
 
-def ground_shipping(weight):
+def ground_shipping_cost(weight):
     if weight <= 2:
         cost = weight * 1.50 + 20
     elif weight > 2 and weight <= 6:
@@ -48,7 +48,7 @@ def ground_shipping(weight):
 
 # 8.4\ lb \times \$4.00 + \$20.00 = \$53.608.4 lb×$4.00 +$20.00 =$53.60
 # Test that your ground shipping function gets the same value.
-print(ground_shipping(8.4))
+print(ground_shipping_cost(8.4))
 
 # Ground Shipping Premium:
 # 4.
@@ -66,10 +66,26 @@ print(ground_shipping_premium)
 
 # Create an if/elif/else statement for the cost of drone shipping. This statement should check against weight and print the cost of shipping a package of that weight.
 
+# Drone Shipping
+
+
+def drone_shipping_cost(weight):
+    if weight <= 2:
+        cost = weight * 4.50
+    elif weight > 2 and weight <= 6:
+        cost = weight * 9.00
+    elif weight > 6 and weight <= 10:
+        cost = weight * 12.00
+    else:
+        cost = weight * 14.25
+    return cost
+
 # 7. A package that weighs 1.5 pounds should cost $6.75 to ship by drone:
+
 
 # 1.5\ lb \times \$4.50 + \$0.00 = \$6.751.5 lb×$4.50 +$0.00 =$6.75
 # Test that your drone shipping function gets the same value.
+print(drone_shipping_cost(1.5))
 
 # 8. Great job! Now, test everything one more time!
 
@@ -77,4 +93,12 @@ print(ground_shipping_premium)
 
 # What is the cheapest method of shipping a 41.5 pound package and how much would it cost?
 
-# (See hint for answers)
+
+def shipping_pricing(weight):
+    print(ground_shipping_cost(weight))
+    print(ground_shipping_premium)
+    print(drone_shipping_cost(weight))
+
+
+shipping_pricing(4.8)
+shipping_pricing(41.5)
