@@ -46,22 +46,35 @@ print(c0_in_fahrenheit)
 # Use the Force
 # 5. Define a function called get_force that takes in mass and acceleration. It should return mass multiplied by acceleration.
 
+
+def get_force(mass, acceleration):
+    force = mass * acceleration
+    return force
 # 6. Test get_force by calling it with the variables train_mass and train_acceleration.
 
+
 # Save the result to a variable called train_force and print it out.
-
+train_force = get_force(train_mass, train_acceleration)
+print(train_force)
 # 7. Print the string “The GE train supplies X Newtons of force.”, with X replaced by train_force.
-
+print("The GE train supplies {} Newtons of force".format(train_force))
 # 8. Define a function called get_energy that takes in mass and c.
 
 # c is a constant that is usually set to the speed of light, which is roughly 3 x 10 ^ 8. Set c to have a default value of 3*10**8.
 
 # get_energy should return mass multiplied by c squared.
 
+
+def get_energy(mass, c=3*10**8):
+    energy = mass * c**2
+    return energy
+
+
 # 9. Test get_energy by using it on bomb_mass, with the default value of c. Save the result to a variable called bomb_energy.
-
+bomb_energy = get_energy(bomb_mass)
+print(bomb_energy)
 # 10. Print the string “A 1kg bomb supplies X Joules.”, with X replaced by bomb_energy.
-
+print("A 1kg bomb supplies {} Joules.".format(bomb_energy))
 # Do the Work
 # 11. Define a final function called get_work that takes in mass, acceleration, and distance.
 
