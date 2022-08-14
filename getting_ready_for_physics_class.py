@@ -1,5 +1,5 @@
 # You are a physics teacher preparing for the upcoming semester. You want to provide your students with some functions that will help them calculate some fundamental physical properties.
-rain_mass = 22680
+train_mass = 22680
 train_acceleration = 10
 train_distance = 100
 bomb_mass = 1
@@ -80,6 +80,16 @@ print("A 1kg bomb supplies {} Joules.".format(bomb_energy))
 
 # Work is defined as force multiplied by distance. First, get the force using get_force, then multiply that by distance. Return the result.
 
-# 12. Test get_work by using it on train_mass, train_acceleration, and train_distance. Save the result to a variable called train_work.
 
+def get_work(mass, acceleration, distance):
+    fforce = get_force(mass, acceleration)
+    work = fforce * distance
+    return work
+
+
+# 12. Test get_work by using it on train_mass, train_acceleration, and train_distance. Save the result to a variable called train_work.
+train_work = get_work(train_mass, train_acceleration, train_distance)
+print(train_work)
 # 13. Print the string "The GE train does X Joules of work over Y meters.", with X replaced with train_work and Y replaced with train_distance.
+print("The GE train does {} Joules of work over {} meters.".format(
+    train_work, train_distance))
