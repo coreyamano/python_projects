@@ -1,4 +1,8 @@
 # You are a physics teacher preparing for the upcoming semester. You want to provide your students with some functions that will help them calculate some fundamental physical properties.
+rain_mass = 22680
+train_acceleration = 10
+train_distance = 100
+bomb_mass = 1
 
 # Turn up the Temperature
 # 1. Write a function called f_to_c that takes an input f_temp, a temperature in Fahrenheit, and converts it to c_temp, that temperature in Celsius.
@@ -9,10 +13,16 @@
 
 # Temp(C) = (Temp(F) - 32) * 5/9
 
+
+def f_to_c(f_temp):
+    c_temp = (f_temp - 32) * (5/9)
+    return c_temp
 # 2. Let’s test your function with a value of 100 Fahrenheit.
 
-# Define a variable f100_in_celsius and set it equal to the value of f_to_c with 100 as an input.
 
+# Define a variable f100_in_celsius and set it equal to the value of f_to_c with 100 as an input.
+f100_in_celsius = f_to_c(100)
+print(f100_in_celsius)
 # 3. Write a function called c_to_f that takes an input c_temp, a temperature in Celsius, and converts it to f_temp, that temperature in Fahrenheit.
 
 # It should then return f_temp.
@@ -20,9 +30,18 @@
 # The equation you should use is :
 
 # Temp(F) = Temp(C) * (9/5) + 32
+
+
+def c_to_f(c_temp):
+    f_temp = c_temp * (9/5) + 32
+    return f_temp
+
 # 4. Let’s test your function with a value of 0 Celsius.
 
+
 # Define a variable c0_in_fahrenheit and set it equal to the value of c_to_f with 0 as an input.
+c0_in_fahrenheit = c_to_f(0)
+print(c0_in_fahrenheit)
 
 # Use the Force
 # 5. Define a function called get_force that takes in mass and acceleration. It should return mass multiplied by acceleration.
