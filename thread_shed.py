@@ -159,33 +159,50 @@ print(daily_transactions_split)
 # Now, Iterate through daily_transactions_split and for each transaction iterate through the different data points and strip off any whitespace.
 
 # Add each of these cleaned up transactions to the new list transactions_clean.
-
+transactions_clean = []
+for txn in daily_transactions_split:
+    for each_txn in txn:
+        transactions_clean.append(each_txn.strip())
 # 9. Print transactions_clean.
 
 # If you performed the last step correctly, you shouldn’t see any unnecessary whitespace.
-
+print(transactions_clean)
 # 10. Create three empty lists. customers, sales, and thread_sold. We are going to collect the individual data points for each transaction in these lists.
-
+customers = []
+sales = []
+thread_sold = []
 # 11. Now, iterate through transactions_clean and for each transaction:
 
 # Append the customers name to customers.
 # Append the amount of the sale to sales.
 # Append the threads sold to thread_sold.
+i = 0
+while i <= (len(transactions_clean) - 1):
+    customers.append(transactions_clean[i])
+    sales.append(transactions_clean[i+1])
+    thread_sold.append(transactions_clean[i+2])
+    i += 4
 
 # 12. Print customers, sales, and thread_sold to make sure each list is what you are expected.
+print(customers)
+print(sales)
+print(thread_sold)
 
 # Determine the total value of the days sales.
 # 13. Now we want to know how much Thread Shed made in a day.
 
 # First, define a variable called total_sales and set it equal to 0.
-
+total_sales = 0
 # 14. Now, consider the list sales. It is a list of strings that we want to sum. In order for us to sum these values, we will have to remove the $, and set them equal to floats.
 
 # Iterate through sales and for each item, strip off the $, set it equal to a float, and add it to total_sales
+for sale in sales:
+    total_sales += float(sale.strip("$"))
 
 # 15. Print total_sales.
 
 # How much did we make today?
+print(total_sales)
 
 # How much thread of any specific color was sold?
 # 16. Finally, we want to determine how many of each color thread we sold today. Let’s start with a single color, and then we’ll generalize it.
