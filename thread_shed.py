@@ -208,27 +208,46 @@ print(total_sales)
 # 16. Finally, we want to determine how many of each color thread we sold today. Let’s start with a single color, and then we’ll generalize it.
 
 # First, print out thread_sold and inspect it.
+print(thread_sold)
 
 # 17. We see that thread_sold is a list of strings, some are single colors and some are multiple colors separated by the & character.
 
 # The end product we want here is a list that contains an item for each color thread sold, so no strings that have multiple colors in them.
 
 # First, define an empty list thread_sold_split.
-
+thread_sold_split = []
 # 18. Next, iterate through thread_sold. For each item, check if it is a single color or multiple colors. If it is a single color, append that color to thread_sold_split.
 
 # If it is multiple colors, first split the string around the & character and then add each color individually to thread_sold_split.
-
+for thread in thread_sold:
+    for color in thread.split("&"):
+        thread_sold_split.append(color)
 # 19. Great, now we have a list thread_sold_split that contains an entry with the color of every thread sold today.
 
 # Define a function called color_count that takes one argument, color. The function should iterate through thread_sold_split and count the number of times the item is equal to argument, color. Then, it should return this count.
+
+
+def color_count(color):
+    color_total = 0
+    for thread_color in thread_sold_split:
+        if color == thread_color:
+            color_total += 1
+    return color_total
 
 # 20. Test your new function by running color_count('white').
 
 # Your function should return 28.
 
+
+print(color_count('white'))
 # 21. Define a list called colors that stores all of the colored threads that Thread Shed offers:
 
-# colors = ['red', 'yellow', 'green', 'white', 'black', 'blue', 'purple']
+colors = ['red', 'yellow', 'green', 'white', 'black', 'blue', 'purple']
 
 # 22. Now, using the string method .format() and the function color_count(), iterate through the list colors and print a sentence that says how many threads of each color were sold today.
+
+for color in colors:
+    print(
+        "Thread Shed sold {} threads of {} thread today.".format(
+            color_count(color), color)
+    )
