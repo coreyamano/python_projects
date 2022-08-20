@@ -6,6 +6,16 @@
 # Store the numbers in a list
 # Return the list
 
+def every_three_nums(start):
+    threes = []
+    if start <= 100:
+        while start <= 100:
+            threes.append(start)
+            start += 3
+        return threes
+    elif start > 100:
+        return threes
+
 # 2. Remove Middle
 # Our next function will remove all elements from a list with an index within a certain range. The function will accept a list, a starting index, and an ending index. All elements with an index between the starting and ending index should be removed from the list. Here are the steps:
 
@@ -15,6 +25,14 @@
 # Combine the two partial lists into the result
 # Return the result
 
+
+def remove_middle(lst, start, end):
+    times = 0
+    while times < end:
+        lst.remove(lst[start])
+        times += 1
+    return lst
+
 # 3. More Frequent Item
 # Let’s go back to our factory example. We have a conveyor belt of items where each item is represented by a different number. We want to know, out of two items, which one shows up more on our belt. To solve this, we can use a function with three parameters. One parameter for the list of items, another for the first item we are comparing, and another for the second item. Here are the steps:
 
@@ -22,6 +40,13 @@
 # Count the number of times item1 shows up in our list
 # Count the number of times item2 shows up in our list
 # If item1 shows up more, return item1. Otherwise, return item2
+
+
+def more_frequent_item(lst, item1, item2):
+    if lst.count(item1) >= lst.count(item2):
+        return item1
+    else:
+        return item2
 
 # 4. Double Index
 # Our next function will double a value at a given position. We will provide a list and an index to double. This will create a new list by replacing the value at the index provided with double the original value. If the index is invalid then we should return the original list. Here is what we need to do:
@@ -33,6 +58,17 @@
 # Add the rest of the list from the index onto the new list
 # Return the new list
 
+
+def double_index(lst, index):
+    new_lst = []
+    if index >= len(lst):
+        return lst
+    else:
+        new_lst = lst[:index]
+        new_lst.append(lst[index]*2)
+        new_lst = new_lst + lst[index+1:]
+    return new_lst
+
 # 5. Middle Item
 # For the final code challenge, we are going to create a function that finds the middle item from a list of values. This will be different depending on whether there are an odd or even number of values. In the case of an odd number of elements, we want this function to return the exact middle value. If there is an even number of elements, it returns the average of the middle two elements. Here is what we need to do:
 
@@ -40,3 +76,11 @@
 # Determine if the length of the list is even or odd
 # If the length is even, then return the average of the middle two numbers
 # If the length is odd, then return the middle number
+
+
+def middle_element(lst):
+    if len(lst) % 2 != 0:
+        return lst[int((len(lst)-1)/2)]
+    else:
+        avg = (lst[int((len(lst)/2))] + lst[int((len(lst)/2 - 1))]) / 2
+        return avg
