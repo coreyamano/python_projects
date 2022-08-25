@@ -7,12 +7,23 @@
 # Print out 3 times num
 # Return the value of 3 times num
 
+def first_three_multiples(num):
+    print(num * 1)
+    print(num * 2)
+    print(num * 3)
+    return num * 3
+
 # 2. Tip
 # Let’s say we are going to a restaurant and we decide to leave a tip. We can create a function to easily calculate the amount to tip based on the total cost of the food and a percentage. This function will accept both of those values as inputs and return the amount of money to tip. In order to do this, we will need a few steps:
 
 # Define the function to accept the total cost of the food called total and the percentage to tip as percentage
 # Calculate the tip amount by multiplying the total and percentage and dividing by 100
 # Return the tip amount
+
+
+def tip(total, percentage):
+    return total * percentage/100
+
 
 # 3. Bond, James Bond
 # It’s time to re-create a famous movie scene through code. Our function is going to concatenate strings together in order to replace James Bond’s name with whatever name we want. The input to our function will be two strings, one for a first name and another for a last name. The function will return a string consisting of the famous phrase but replaced with our inputs. To accomplish this, we need to:
@@ -24,6 +35,9 @@
 # Concatenate the last_name again to the result
 # Return the final string
 
+def introduction(first_name, last_name):
+    return last_name + ", " + first_name + " " + last_name
+
 # 4. Dog Years
 # Let’s create a function which calculates a dog’s age in dog years! This function will accept the name of the dog and the age in human years. It will calculate the age of the dog in dog years and return a string describing the dog’s age. This will require a few steps:
 
@@ -31,6 +45,11 @@
 # Calculate the age of the dog in dog years
 # Concatenate the string with the dog’s name and age in dog years
 # Return the resulting string
+
+
+def dog_years(name, age):
+    dog_age = age * 7
+    return "{}, you are {} years old in dog years".format(name, dog_age)
 
 # 5. All Operations
 # For the final code challenge, we are going to perform multiple mathematical operations on multiple inputs to the function. We will begin with adding the first two inputs, then we will subtract the third and fourth inputs. After that, we will multiply the first result and the second result. In the end, we will return the remainder of the previous result divided by the first input. We will also print each of the steps. The steps needed to complete this are:
@@ -40,3 +59,13 @@
 # Print and store the result of c - d
 # Print and store the first result times the second result
 # Return the previous result modulo a
+
+
+def lots_of_math(a, b, c, d):
+    first = a + b
+    second = c - d
+    third = first * second
+    print(first)
+    print(second)
+    print(third)
+    return third % a
