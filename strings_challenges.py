@@ -55,6 +55,14 @@ def count_multi_char_x(word, x):
 # If neither of the indices are - 1, return the portion of the first input parameter string between the starting and ending indices(not including the starting and ending index)
 # If either of the indices are - 1, that means the start or end of the substring didn’t exist in our string. Return the original string in this case.
 
+
+def substring_between_letters(word, start, end):
+    start_index = word.find(start)
+    end_index = word.find(end)
+    if start_index >= 0 and end_index >= 0:
+        return(word[start_index + 1:end_index])
+    return word
+
 # 5. X Length
 # Let’s use the split method in a different way. We need a new function that is able to accept two inputs: one for a sentence and another for a number. The function returns True if every single word in the sentence has a length greater than or equal to the number provided. These are the steps:
 
@@ -62,3 +70,11 @@ def count_multi_char_x(word, x):
 # Split up the sentence into an array of words
 # Loop through the words. If the length of any of the words is less than the provided number return False
 # If we made it through the loop without returning False then return True
+
+
+def x_length_words(sentence, x):
+    words = sentence.split(" ")
+    for word in words:
+        if len(word) < x:
+            return False
+    return True
